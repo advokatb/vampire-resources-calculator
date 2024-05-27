@@ -1,21 +1,8 @@
 <!-- templates/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор Вампирского</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
-    <div class="container mx-auto mt-5">
-        <h1 class="text-4xl text-center">Калькулятор Вампирского</h1>
-        <nav class="mt-5">
-            <ul class="flex justify-center space-x-4">
-                <li><a href="/" class="text-blue-500">Главная</a></li>
-                <li><a href="/calculate-attraction" class="text-blue-500">Калькулятор влечения</a></li>
-            </ul>
-        </nav>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Attraction Calculator{% endblock %}
+
+{% block content %}
+<h1 class="text-4xl text-center">Калькулирования Вампиров</h1>
+{% endblock %}

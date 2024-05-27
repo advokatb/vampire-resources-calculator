@@ -1,73 +1,66 @@
 <!-- templates/calculate_attraction.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculate Attraction</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
-    <div class="container mx-auto mt-5">
-        <h1 class="text-4xl text-center">Calculate Attraction</h1>
-        <form method="post" class="mt-5 bg-white p-5 rounded shadow-md">
-            <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/lilac_bouquet.png') }}" alt="Лиловый букет" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="lilac_bouquet" class="block text-gray-700">Лиловый букет:</label>
-                        <input type="number" name="lilac_bouquet" id="lilac_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(+5 ед. влечения)</small>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/blue_bouquet.png') }}" alt="Синий букет" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="blue_bouquet" class="block text-gray-700">Синий букет:</label>
-                        <input type="number" name="blue_bouquet" id="blue_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(+2 ед. влечения)</small>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/red_bouquet.png') }}" alt="Алый букет" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="red_bouquet" class="block text-bold text-gray-700">Алый букет:</label>
-                        <input type="number" name="red_bouquet" id="red_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(+1 ед. влечения)</small>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/attraction_bowl.png') }}" alt="Пиала влечения" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="attraction_bowl" class="block text-bold text-gray-700">Пиала влечения:</label>
-                        <input type="number" name="attraction_bowl" id="attraction_bowl" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(среднее 2.5/ед)</small>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/attraction_bottle.png') }}" alt="Бутыль влечения" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="attraction_bottle" class="block text-bold text-gray-700">Бутыль влечения:</label>
-                        <input type="number" name="attraction_bottle" id="attraction_bottle" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(среднее 6.5/ед)</small>
-                    </div>
-                </div>
-                <div class="flex items-center">
-                    <img src="{{ url_for('static', filename='images/attraction_box.png') }}" alt="Шкатулка влечения" class="w-16 h-16">
-                    <div class="ml-4">
-                        <label for="attraction_box" class="block text-bold text-gray-700">Шкатулка влечения:</label>
-                        <input type="number" name="attraction_box" id="attraction_box" class="mt-1 block w-full border rounded p-2" min="0" value="0">
-                        <small class="text-gray-500">(среднее 27/ед)</small>
-                    </div>
-                </div>
+{% extends "base.html" %}
+
+{% block title %}Calculate Attraction{% endblock %}
+
+{% block content %}
+<h1 class="text-4xl text-center">Рассчет влечения</h1>
+<form method="post" class="mt-5 bg-white p-5 rounded shadow-md">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/lilac_bouquet.png') }}" alt="Лиловый букет" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="lilac_bouquet" class="block text-gray-700">Лиловый букет:</label>
+                <input type="number" name="lilac_bouquet" id="lilac_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+5 ед. влечения)</small>
             </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Рассчитать</button>
-        </form>
-        {% if total_attraction is not none %}
-        <div class="mt-5 bg-green-100 p-5 rounded shadow-md">
-            <h2 class="text-2xl">Всего влечения: {{ total_attraction }}</h2>
         </div>
-        {% endif %}
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/blue_bouquet.png') }}" alt="Синий букет" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="blue_bouquet" class="block text-gray-700">Синий букет:</label>
+                <input type="number" name="blue_bouquet" id="blue_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+2 ед. влечения)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/red_bouquet.png') }}" alt="Алый букет" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="red_bouquet" class="block text-bold text-gray-700">Алый букет:</label>
+                <input type="number" name="red_bouquet" id="red_bouquet" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+1 ед. влечения)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/attraction_bowl.png') }}" alt="Пиала влечения" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="attraction_bowl" class="block text-bold text-gray-700">Пиала влечения:</label>
+                <input type="number" name="attraction_bowl" id="attraction_bowl" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 2.5/ед)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/attraction_bottle.png') }}" alt="Бутыль влечения" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="attraction_bottle" class="block text-bold text-gray-700">Бутыль влечения:</label>
+                <input type="number" name="attraction_bottle" id="attraction_bottle" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 6.5/ед)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/attraction_box.png') }}" alt="Шкатулка влечения" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="attraction_box" class="block text-bold text-gray-700">Шкатулка влечения:</label>
+                <input type="number" name="attraction_box" id="attraction_box" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 27/ед)</small>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+    <button type="submit" class="bg-blue-500 text-white text-bold px-6 py-3 rounded mt-4 w-full sm:w-auto">Рассчитать</button>
+</form>
+{% if total_attraction is not none %}
+<div class="mt-5 bg-green-100 p-5 rounded shadow-md">
+    <h2 class="text-2xl">Total Attraction: {{ total_attraction }}</h2>
+</div>
+{% endif %}
+{% endblock %}
