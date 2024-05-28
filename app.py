@@ -29,5 +29,26 @@ def calculate_attraction():
     
     return render_template('calculate_attraction.html', total_attraction=None)
 
+@app.route('/calculate-intimacy', methods=['GET', 'POST'])
+def calculate_intimacy():
+    if request.method == 'POST':
+        luxurious_gift = int(request.form.get('luxurious_gift', 0))
+        large_gift = int(request.form.get('large_gift', 0))
+        regular_gift = int(request.form.get('regular_gift', 0))
+        intimacy_bag = int(request.form.get('intimacy_bag', 0))
+        intimacy_sack = int(request.form.get('intimacy_sack', 0))
+        intimacy_box = int(request.form.get('intimacy_box', 0))
+        
+        total_intimacy = (luxurious_gift * 5 + 
+                          large_gift * 2 + 
+                          regular_gift * 1 + 
+                          intimacy_bag * 2.5 + 
+                          intimacy_sack * 6.5 + 
+                          intimacy_box * 27)
+        
+        return render_template('calculate_intimacy.html', total_intimacy=total_intimacy)
+    
+    return render_template('calculate_intimacy.html', total_intimacy=None)
+
 if __name__ == '__main__':
     app.run(debug=True)

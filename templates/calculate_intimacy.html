@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Calculate Intimacy{% endblock %}
+
+{% block content %}
+<h1 class="text-4xl text-center">Рассчет близости</h1>
+<form method="post" class="mt-5 bg-white p-5 rounded shadow-md">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/luxurious_gift.png') }}" alt="Роскошный подарок" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="luxurious_gift" class="block text-gray-700">Роскошный подарок:</label>
+                <input type="number" name="luxurious_gift" id="luxurious_gift" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+5 ед. близости)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/large_gift.png') }}" alt="Большой подарок" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="large_gift" class="block text-gray-700">Большой подарок:</label>
+                <input type="number" name="large_gift" id="large_gift" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+2 ед. близости)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/regular_gift.png') }}" alt="Обычный подарок" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="regular_gift" class="block text-gray-700">Обычный подарок:</label>
+                <input type="number" name="regular_gift" id="regular_gift" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+1 ед. близости)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/intimacy_bag.png') }}" alt="Сумочка близости" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="intimacy_bag" class="block text-gray-700">Сумочка близости:</label>
+                <input type="number" name="intimacy_bag" id="intimacy_bag" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 2.5/ед)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/intimacy_sack.png') }}" alt="Мешок близости" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="intimacy_sack" class="block text-gray-700">Мешок близости:</label>
+                <input type="number" name="intimacy_sack" id="intimacy_sack" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 6.5/ед)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/intimacy_box.png') }}" alt="Шкатулка близости" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="intimacy_box" class="block text-gray-700">Шкатулка близости:</label>
+                <input type="number" name="intimacy_box" id="intimacy_box" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(среднее 27/ед)</small>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded mt-4 w-full sm:w-auto">Рассчитать</button>
+</form>
+{% if total_intimacy is not none %}
+<div class="mt-5 bg-green-100 p-5 rounded shadow-md">
+    <h2 class="text-2xl">Всего близости: {{ total_intimacy }}</h2>
+</div>
+{% endif %}
+{% endblock %}
