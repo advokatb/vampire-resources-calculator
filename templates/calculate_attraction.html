@@ -55,6 +55,38 @@
                 <small class="text-gray-500">(среднее 27/ед)</small>
             </div>
         </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/turquoise_note.png') }}" alt="Бирюзовая записка" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="turquoise_note" class="block text-gray-700">Бирюзовая записка:</label>
+                <input type="number" name="turquoise_note" id="turquoise_note" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+1 ед. влечения)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/indigo_note.png') }}" alt="Индиговая записка" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="indigo_note" class="block text-gray-700">Индиговая записка:</label>
+                <input type="number" name="indigo_note" id="indigo_note" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+2 ед. влечения)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/crimson_note.png') }}" alt="Багровая записка" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="crimson_note" class="block text-gray-700">Багровая записка:</label>
+                <input type="number" name="crimson_note" id="crimson_note" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+5 ед. влечения)</small>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='images/golden_note.png') }}" alt="Потальная записка" class="w-16 h-16">
+            <div class="ml-4">
+                <label for="golden_note" class="block text-gray-700">Потальная записка:</label>
+                <input type="number" name="golden_note" id="golden_note" class="mt-1 block w-full border rounded p-2" min="0" value="0">
+                <small class="text-gray-500">(+25 ед. влечения)</small>
+            </div>
+        </div>
     </div>
     <button type="submit" class="bg-blue-500 text-white text-bold px-6 py-3 rounded mt-4 w-full sm:w-auto">Рассчитать</button>
 </form>

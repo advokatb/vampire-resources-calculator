@@ -17,13 +17,21 @@ def calculate_attraction():
         attraction_bowl = int(request.form.get('attraction_bowl', 0))
         attraction_bottle = int(request.form.get('attraction_bottle', 0))
         attraction_box = int(request.form.get('attraction_box', 0))
+        turquoise_note = int(request.form.get('turquoise_note', 0))
+        indigo_note = int(request.form.get('indigo_note', 0))
+        crimson_note = int(request.form.get('crimson_note', 0))
+        golden_note = int(request.form.get('golden_note', 0))
         
         total_attraction = (lilac_bouquet * 5 + 
                             blue_bouquet * 2 + 
                             red_bouquet * 1 + 
                             attraction_bowl * 2.5 + 
                             attraction_bottle * 6.5 + 
-                            attraction_box * 27)
+                            attraction_box * 27 +
+                            turquoise_note * 1 +
+                            indigo_note * 2 +
+                            crimson_note * 5 +
+                            golden_note * 25)
         
         return render_template('calculate_attraction.html', total_attraction=total_attraction)
     
