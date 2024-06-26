@@ -1,16 +1,25 @@
 <!-- templates/navigation.html -->
-<nav class="bg-white shadow">
+<nav class="bg-white shadow-md">
     <div class="container mx-auto py-4 px-6">
-        <ul class="flex justify-center space-x-8">
+        <ul class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8">
             <li>
-                <a href="/" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 nav-link">Главная</a>
+                <a href="/" class="nav-link">Главная</a>
             </li>
             <li>
-                <a href="/calculate-attraction" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 nav-link">Влечение</a>
+                <a href="/calculate-attraction" class="nav-link">Влечение</a>
             </li>
             <li>
-                <a href="/calculate-intimacy" class="text-gray-700 hover:text-blue-500 transition-colors duration-300 nav-link">Близость</a>
+                <a href="/calculate-intimacy" class="nav-link">Близость</a>
             </li>
         </ul>
     </div>
 </nav>
+
+<style>
+    .nav-link {
+        @apply text-gray-700 hover:text-blue-500 transition-colors duration-300 font-medium text-lg px-3 py-2 rounded-lg;
+    }
+    .nav-link:hover {
+        @apply bg-blue-100;
+    }
+</style>
