@@ -1,8 +1,14 @@
-<!-- templates/index.html -->
 {% extends "base.html" %}
 
 {% block title %}Attraction Calculator{% endblock %}
 
 {% block content %}
-<h1 class="text-4xl text-center">Калькулирования Вампиров</h1>
+<h1 class="text-4xl text-center mb-6">Калькулирования Вампиров</h1>
+<div class="text-center mb-8">
+    <h2 class="text-2xl font-semibold mb-2">Поддержать проект</h2>
+    <p class="text-lg text-gray-700 mb-4">Ваши пожертвования помогают нам улучшать и развивать проект. Спасибо за вашу поддержку!</p>
+    <div class="flex justify-center">
+        <iframe src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=13K32E804MV.240626&" width="330" height="50" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+    </div>
+</div>
 {% endblock %}
