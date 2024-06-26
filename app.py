@@ -22,7 +22,7 @@ def calculate_attraction():
         crimson_note = int(request.form.get('crimson_note', 0))
         golden_note = int(request.form.get('golden_note', 0))
         
-        total_attraction = (lilac_bouquet * 5 + 
+        total_attraction = round(lilac_bouquet * 5 + 
                             blue_bouquet * 2 + 
                             red_bouquet * 1 + 
                             attraction_bowl * 2.5 + 
@@ -47,7 +47,7 @@ def calculate_intimacy():
         intimacy_sack = int(request.form.get('intimacy_sack', 0))
         intimacy_box = int(request.form.get('intimacy_box', 0))
         
-        total_intimacy = (luxurious_gift * 5 + 
+        total_intimacy = round(luxurious_gift * 5 + 
                           large_gift * 2 + 
                           regular_gift * 1 + 
                           intimacy_bag * 2.5 + 
